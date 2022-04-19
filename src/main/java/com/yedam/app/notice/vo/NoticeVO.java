@@ -3,14 +3,12 @@ package com.yedam.app.notice.vo;
 import java.sql.Date;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
 
 /*@Getter
 @Setter
@@ -19,6 +17,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+
 public class NoticeVO {
 	
 	private int id;
@@ -28,6 +27,8 @@ public class NoticeVO {
 	@JsonFormat(pattern="yyyy-MM-dd", timezone="Asia/Seoul")	
 	private Date wdate;
 	private int hit;
-	private String fileName;
-	private String uuidFile;
+	
+	@JsonIgnore private String fileName;
+	@JsonIgnore private String uuidFile;
+	//제이슨 타입으로 변환 X
 }

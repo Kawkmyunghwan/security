@@ -13,6 +13,8 @@
 </sec:authorize>
 <sec:authorize access="isAuthenticated()">
 	로그인 유저 <sec:authentication property="principal.username"/>
+	<sec:authentication property="principal.name"/>
+	<sec:authentication property="principal.tel"/>
 	<form action="logout" method="post">
 		<sec:csrfInput/>
 		<button>로그아웃</button>
