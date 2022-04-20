@@ -7,6 +7,7 @@ import org.junit.Test;
 import com.yedam.app.bank.web.AccountVO;
 import com.yedam.app.bank.web.BankApi;
 import com.yedam.app.bank.web.BankVO;
+import com.yedam.app.bank.web.TransActionVO;
 
 public class BankTest {
 
@@ -24,5 +25,18 @@ public class BankTest {
 		List<AccountVO> list = BankApi.getAccountList(vo);
 		System.out.println(list);
 				
+	}
+	
+	@Test
+	public void getRealName() {
+		String str = BankApi.getRealName();
+		System.out.println(str);
+	}
+	
+	@Test
+	public void getTransaction() {
+		BankVO vo = new BankVO();
+		List<TransActionVO> list = BankApi.getTransaction(vo);
+		System.out.println(list);
 	}
 }
