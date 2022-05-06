@@ -1,6 +1,7 @@
 package com.yedam.app.bank.web;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,6 +23,16 @@ public class BankController {
 	@GetMapping("/getTransaction")
 	public List<TransActionVO> getTransaction(BankVO vo) {
 		return BankApi.getTransaction(vo);
+	}
+	
+	@GetMapping("/changeName")
+	public Map changeName(BankVO vo) {
+		return BankApi.changeName(vo);
+	}
+	
+	@GetMapping("/getRealName")
+	public Map getRealName(BankVO vo) {
+		return BankApi.getRealName(vo);
 	}
 
 	

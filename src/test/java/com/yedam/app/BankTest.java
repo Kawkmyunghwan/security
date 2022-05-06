@@ -11,7 +11,14 @@ import com.yedam.app.bank.web.TransActionVO;
 
 public class BankTest {
 
-	@Test
+	//@Test
+	public void getChangeName() {
+		BankVO vo = new BankVO();
+		String str = BankApi.changeName(vo);
+		System.out.println(str);
+	}
+	
+	//@Test
 	public void getBalance() {
 		BankVO vo = new BankVO();
 		long balance = BankApi.getBalanceInfo(vo);
@@ -19,7 +26,7 @@ public class BankTest {
 				
 	}
 	
-	@Test
+	//@Test
 	public void getAccountList() {
 		BankVO vo = new BankVO();
 		List<AccountVO> list = BankApi.getAccountList(vo);
@@ -28,12 +35,12 @@ public class BankTest {
 	}
 	
 	@Test
-	public void getRealName() {
-		String str = BankApi.getRealName();
+	public void getRealName(BankVO vo) {
+		String str = BankApi.getRealName(vo);
 		System.out.println(str);
 	}
 	
-	@Test
+	//@Test
 	public void getTransaction() {
 		BankVO vo = new BankVO();
 		List<TransActionVO> list = BankApi.getTransaction(vo);
